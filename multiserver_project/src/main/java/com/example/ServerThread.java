@@ -34,6 +34,11 @@ public class ServerThread extends Thread{
             if(stringaRicevuta == null || stringaRicevuta.equals("FINE")){
                 outVersoClient.writeBytes(stringaRicevuta+"(=>server in chiusura...)" + "\n");
                 System.out.println("Echo sul server in chiusura :" + stringaRicevuta);
+            }else{
+
+                stringaModificata=stringaRicevuta.toUpperCase();
+                outVersoClient.writeBytes(stringaModificata+" *ricevuta e trasmessa*" + "\n");
+                System.out.println("6 Echo sul server :" + stringaRicevuta);
             }
         }
     }
